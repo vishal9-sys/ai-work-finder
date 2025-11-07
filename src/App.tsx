@@ -4,6 +4,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Auth from "./pages/Auth";
+import WorkerRegister from "./pages/WorkerRegister";
+import JobPost from "./pages/JobPost";
+import WorkerList from "./pages/WorkerList";
+import EmployerDashboard from "./pages/EmployerDashboard";
+import WorkerDashboard from "./pages/WorkerDashboard";
+import AIMatch from "./pages/AIMatch";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -16,6 +23,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/worker-register" element={<WorkerRegister />} />
+          <Route path="/job-post" element={<JobPost />} />
+          <Route path="/worker-list" element={<WorkerList />} />
+          <Route path="/employer-dashboard" element={<EmployerDashboard />} />
+          <Route path="/worker-dashboard" element={<WorkerDashboard />} />
+          <Route path="/ai-match/:jobId" element={<AIMatch />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
